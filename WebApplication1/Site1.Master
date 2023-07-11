@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--Datatable css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--Font Awesome--%>
+    <link href="fontawesome/css/font-awesome.css" rel="stylesheet" />
+    <%--External CSS--%>
+    <link href="css/style.css" rel="stylesheet" />
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%-- DataTable js--%>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">iCoders</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="home.aspx" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <asp:LinkButton runat="server" class="nav-item nav-link" ID="LinkButton1" OnClick="LinkButton1_Click">View Books</asp:LinkButton>
+                        <li class="nav-item active dropdown">
+                            <asp:LinkButton runat="server" class="dropdown-toggle nav-item nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 28px" Visible="False">Courses
+                            </asp:LinkButton>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <asp:LinkButton runat="server" ID="LinkButton7" CssClass="dropdown-item" OnClick="LinkButton7_Click">Author Management</asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="LinkButton8" CssClass="dropdown-item" OnClick="LinkButton8_Click">Book Inventory</asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="LinkButton9" CssClass="dropdown-item" OnClick="LinkButton9_Click">Book Issuing</asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="LinkButton10" CssClass="dropdown-item" OnClick="LinkButton10_Click">Member Management</asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="LinkButton11" CssClass="dropdown-item" OnClick="LinkButton11_Click">Publisher Management</asp:LinkButton>
+
+                            </div>
+                        </li>
+                    </ul>
+                    <asp:LinkButton runat="server" ID="LinkButton4" class="btn btn-outline-success mx-2" OnClick="LinkButton4_Click">User Login</asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="LinkButton6" CssClass="btn btn-outline-danger mx-2" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="LinkButton2" OnClick="LinkButton2_Click" class="btn btn-outline-success mx-2">SignUp</asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="LinkButton3" class="btn btn-outline-danger mx-2" OnClick="LinkButton3_Click" Visible="False">Login out</asp:LinkButton>
+                    <asp:LinkButton runat="server" class="navbar-nav nav-link text-white" ID="LinkButton5" Visible="False">Hello Users</asp:LinkButton>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="text-muted text-center text-small bg-dark" style="padding: 2rem;">
+            <p class="mb-1">© 2021 iCoders</p>
+        </footer>
+    </form>
+    
+</body>
+</html>
